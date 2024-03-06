@@ -13,6 +13,13 @@ Batocera Linux is an open-source and completely free retro-gaming distribution t
 
 ## Get information on the project
 
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+
  - :globe_with_meridians: Browse our [website](https://batocera.org/) for general information and get access to all the latest downloads
  - :memo: Documentation is available on our [wiki](https://wiki.batocera.org/doku.php) and frequently updated
  - :speech_balloon: Discuss any topic with the community on our [Discord Server](https://discord.gg/ndyUKA5)
